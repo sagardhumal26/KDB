@@ -1,0 +1,20 @@
+Server Side:-
+q)\p 5050
+q)f:{show "Received ",x;{neg[x] (`mycallback;"Bye")}each (key .z.W)}
+q)"Received Hi"
+"Received go"
+
+Client1:-
+q)mycallback:{show "Returned ",x}
+q)
+q)h:hopen `::5050
+q)
+q)neg[h] (`f;"go")
+q)"Returned Bye"
+
+Client2:-
+q)mycallback:{show "Returned ",x}
+q)h:hopen `::5050
+q)neg[h] (`f;"Hi")
+q)"Returned Bye"
+"Returned Bye"
