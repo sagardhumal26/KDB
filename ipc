@@ -1,0 +1,12 @@
+Server Code:
+
+\p 5050
+f:{show "Received ",string x;neg[.z.w] (`mycallback;x+1)}
+
+Client Code:
+
+h:hopen `::5050
+mycallback:{show "Returned ",string x}
+neg[h] (`f;42)
+"Returned 43"
+hclose h
