@@ -35,3 +35,22 @@ q)
 
 
 ///////////////////////////////////////////////////////////////////////////////////
+////  File read/write operations
+///////////////////////////////////////////////////////////////////////////////////
+/========= Binary Read ====================== Text Read ========
+q)read1 `:/a/b/file                           q)read0 `:/a/b/file.txt
+
+/========= Binary Write ===================== Text Write ========
+/open file handle
+q)h 10 20 30                                  q)neg[h] "Hello there"
+/This will write list into file
+
+q)`:/filehandle 1: <data>                     q)`:/filehandle 0: <data>
+`:/filehandle
+
+q).[`:/data/raw; (); :; 1001 1002 1003]
+`:/data/raw
+q)get `:/data/raw
+1001 1002 1003
+
+///////////////////////////////////////////////////////////////////////////////////
