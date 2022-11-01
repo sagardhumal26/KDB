@@ -1,3 +1,5 @@
+/https://code.kx.com/q/wp/permissions/
+
 /create file and store username:password
 /file name :- mypassword
 /user1:password   -> file content
